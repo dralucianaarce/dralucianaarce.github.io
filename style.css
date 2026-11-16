@@ -484,3 +484,18 @@ a.chip:hover{background:rgba(255,255,255,.22)}
   .hero-txt{margin-top:10px}
 }
 @media (max-width:979px) and (max-height:740px){.hero-photo{height:34svh;min-height:230px}.hero .lead{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}.hero h1{font-size:2rem}}
+/* v7: primeira dobra mobile limpa */
+@media (max-width:979px){
+  .hero-photo,.hero-photo[class]{height:auto!important;min-height:0!important;max-height:none!important;aspect-ratio:1/1.1;margin:0 -16px}
+  .hero-photo img{object-position:50% 12%!important;-webkit-mask-image:linear-gradient(to bottom,#000 70%,transparent 100%);mask-image:linear-gradient(to bottom,#000 70%,transparent 100%)}
+  .chip{bottom:14px!important;padding:.45rem .8rem!important;border-radius:999px!important;gap:.4rem!important}
+  .chip div{font-size:0;display:flex;align-items:center}
+  .chip div b{font-size:.8rem!important;white-space:nowrap}
+  .chip .stars{display:none}
+  .chip .ico{width:16px!important;height:16px!important}
+  .chip-g{left:16px!important}.chip-c{right:16px!important}
+  .hero-txt{margin-top:-6px!important}
+  .hero h1{font-size:clamp(2rem,8.6vw,2.6rem)!important}
+  .hero .lead{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+}
+@media (max-width:979px) and (max-height:740px){.hero-photo,.hero-photo[class]{aspect-ratio:1/.92}}
