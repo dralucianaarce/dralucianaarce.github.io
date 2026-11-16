@@ -440,3 +440,32 @@ a.chip:hover{background:rgba(255,255,255,.22)}
 .proof a,.proof .crbm-mini{min-height:44px}
 .res-card a,.proc a{min-height:44px}
 .crumb{min-height:44px}
+
+/* v5: selos fora do rosto no celular + avaliações compactas */
+.reviews{padding:64px 0}
+.reviews .wrap{display:block}
+.rv-top{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:1.4rem}
+.rv-top h2{font-size:clamp(1.9rem,4vw,2.8rem);margin:.6rem 0 0}
+.score-pill{display:inline-flex;align-items:center;gap:.8rem;text-decoration:none;background:var(--espresso);color:#fff;border-radius:18px;padding:.7rem 1rem .7rem 1.1rem;transition:transform .2s}
+.score-pill:hover{transform:translateY(-2px)}
+.score-pill b{font-family:var(--serif);font-size:2.3rem;line-height:1;font-weight:700}
+.score-pill .stars{display:block;color:#ffc94d;letter-spacing:2px;font-size:.95rem;line-height:1.1}
+.score-pill small{display:block;font-size:.76rem;color:#d8cdbf}
+.score-pill .ico{width:18px;height:18px;color:var(--gold-l);stroke-width:2}
+.rv-row{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 16px 12px;margin:0 -16px;scrollbar-width:none}
+.rv-row::-webkit-scrollbar{display:none}
+.rv-row .rv{flex:0 0 78%;max-width:300px;scroll-snap-align:start;padding:1.1rem 1.15rem 1rem;gap:.55rem;border-radius:18px}
+.rv-row .rv .stars{font-size:.85rem}
+.rv-row .rv p{font-size:.93rem;line-height:1.5;display:-webkit-box;-webkit-line-clamp:6;-webkit-box-orient:vertical;overflow:hidden}
+.rv-row .rv .av{width:32px;height:32px;font-size:.85rem}
+.rv-row .rv .who{font-size:.8rem}
+.rv-row .rv .who b{font-size:.88rem}
+@media (min-width:980px){.reviews{padding:80px 0}.rv-row{overflow:visible;margin:0;padding:4px 0;display:grid;grid-template-columns:repeat(4,1fr)}.rv-row .rv{max-width:none}}
+@media (max-width:979px){
+  .chip{animation:none;padding:.42rem .6rem;font-size:.68rem;border-radius:12px;gap:.45rem;background:rgba(23,17,14,.55);border-color:rgba(255,255,255,.18)}
+  .chip b{font-size:.8rem}
+  .chip .ico{width:18px;height:18px}
+  .chip .stars{font-size:.7rem}
+  .chip-g{top:auto;bottom:78px;left:12px;right:auto}
+  .chip-c{top:auto;bottom:78px;right:12px;left:auto}
+}
