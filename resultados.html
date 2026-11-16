@@ -3,11 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Antes e Depois | Dra. Luciana Arce · Copacabana · CRBM 06795</title>
-<meta name="description" content="Resultados reais de pacientes da Dra. Luciana Arce, biomédica esteta em Copacabana (CRBM 06795): rejuvenescimento facial, preenchimento labial e bioestimulador de colágeno. Divulgação autorizada.">
+<title>Antes e Depois | Dra. Luciana Arce, Copacabana</title>
+<meta name="description" content="Antes e depois de pacientes da Dra. Luciana Arce em Copacabana: preenchimento labial, bioestimulador, toxina botulínica e rejuvenescimento. Divulgação autorizada.">
 <meta name="theme-color" content="#17110e">
+<link rel="canonical" href="https://dralucianaarce.github.io/resultados.html">
+<link rel="icon" type="image/png" sizes="64x64" href="img/icon-64.png">
+<link rel="apple-touch-icon" href="img/icon-180.png">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Dra. Luciana Arce | Harmonização facial em Copacabana">
+<meta property="og:url" content="https://dralucianaarce.github.io/resultados.html">
+<meta property="og:title" content="Antes e Depois | Dra. Luciana Arce">
 <meta property="og:description" content="Resultado natural, sem exagero. Nota 5,0 no Google com 68 avaliações. Agende pelo WhatsApp.">
 <meta property="og:image" content="https://dralucianaarce.github.io/img/og.jpg">
 <meta property="og:locale" content="pt_BR">
@@ -68,7 +72,7 @@
 
 <header class="top" id="top">
   <div class="wrap">
-    <a class="brand" href="index.html" aria-label="Dra. Luciana Arce, início"><b>Luciana Arce</b><span>Estética Avançada</span></a>
+    <a class="brand" href="index.html" aria-label="Dra. Luciana Arce, início"><img src="img/logo-h.webp" width="254" height="46" alt="Dra. Luciana Arce · Biomédica Esteta"></a>
     <nav class="nav" aria-label="Seções">
       <a href="index.html#procedimentos">Procedimentos</a>
       <a href="index.html#resultados">Resultados</a>
@@ -245,7 +249,7 @@
 <footer>
   <div class="wrap">
     <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:18px;align-items:center">
-      <div><div class="fb">Dra. Luciana Arce</div><span>Estética Avançada · Biomédica esteta · CRBM 06795</span></div>
+      <div><img src="img/logo-h.webp" width="254" height="46" alt="Dra. Luciana Arce" loading="lazy" style="margin-bottom:.6rem"><br><span>Biomédica esteta · CRBM 06795</span></div>
       <div class="socials">
         <a href="https://www.instagram.com/dralucianaarce/" target="_blank" rel="noopener" aria-label="Instagram"><svg class="ico"><use href="#i-cam"/></svg></a>
         <a href="https://www.facebook.com/lucianaarceestetica" target="_blank" rel="noopener" aria-label="Facebook"><svg class="ico"><use href="#i-fb"/></svg></a>
@@ -292,7 +296,9 @@
 
   // topo sólido + barra mobile
   var top = document.getElementById('top'), mbar = document.getElementById('mbar');
-  function onScroll(){ var y = window.scrollY; top.classList.toggle('solid', y > 40); mbar.classList.toggle('on', y > 520); }
+  var heroCta = document.querySelector('.hero .btn-wa'), ctaVisible = !!heroCta;
+  if (heroCta && 'IntersectionObserver' in window){ new IntersectionObserver(function(es){ ctaVisible = es[0].isIntersecting; onScroll(); }).observe(heroCta); }
+  function onScroll(){ var y = window.scrollY; top.classList.toggle('solid', y > 40); mbar.classList.toggle('on', heroCta ? !ctaVisible : y > 300); }
   window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
 
   // reels em modal (carrega o Instagram só quando a pessoa toca)
