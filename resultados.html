@@ -336,7 +336,7 @@
   });
 
   // abre filtrado pelo link (#labios, #bio...)
-  var h = location.hash.replace('#',''); if (h){ var hb = document.querySelector('.chips button[data-f="'+h+'"]'); if (hb){ hb.click(); setTimeout(function(){ document.querySelector('.chips').scrollIntoView({behavior:'smooth'}); }, 300); } }
+  var h = new URLSearchParams(location.search).get('f') || location.hash.replace('#',''); if (h){ var hb = document.querySelector('.chips button[data-f="'+h+'"]'); if (hb){ hb.click(); setTimeout(function(){ document.querySelector('.chips').scrollIntoView({behavior:'smooth'}); }, 300); } }
 
   // animação ao rolar
   var els = document.querySelectorAll('.reveal');
